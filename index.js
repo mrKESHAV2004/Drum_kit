@@ -3,10 +3,12 @@ for(i=0;i<noofdrums;i++){
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
         var btninnerhtml=this.innerHTML;
         sound(btninnerhtml);
+        btnannimation(btninnerhtml);
     });
 }
 document.addEventListener("keypress",function(e){
     sound(e.key);
+    btnannimation(e.key);
 })
 function sound(key){
     switch(key){
@@ -33,4 +35,11 @@ function sound(key){
             tom4.play();break;
         default:console.log(btninnerhtml);
     }
+}
+function btnannimation(currentkey){
+    var activebtn=document.querySelector("."+currentkey);
+    activebtn.classList.add("pressed");
+    setTimeout(function(){
+        activebtn.classList.remove("pressed")
+    },200)
 }
