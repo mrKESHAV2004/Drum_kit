@@ -13,7 +13,7 @@ document.addEventListener("keypress",function(e){
 function sound(key){
     switch(key){
         case "w":
-            var crash=new Audio('/sounds/crash.mp3');
+            var crash=new Audio('sounds/crash.mp3');
             crash.play();break;
         case "a":
             var kick_bass=new Audio('sounds/kick-bass.mp3');
